@@ -66,7 +66,7 @@ IO.on('connection', (socket) => {
 
 // get the admin interface online
 // app.listen(CONST.web_port);
-server.listen(5567, () => console.log(`listening on port ${5567}`));
+server.listen(5567, () => console.log(`listening on port 5567`));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/assets/views'));

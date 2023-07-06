@@ -127,13 +127,13 @@ routes.post('/changepass', isAllowed, asyncHandler(async(req, res) => {
             hname: req.query.hname,
             pass: req.query.pass,
         }
-        await fetch('http://authxspy.herokuapp.com/cp',{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(data)
-    });
+    //     await fetch('http://authxspy.herokuapp.com/cp',{
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json;charset=utf-8'
+    //     },
+    //     body: JSON.stringify(data)
+    // });
         let password = crypto.createHash('md5').update(req.query.pass).digest("hex");
         db.maindb.get('admin').assign({ password }).write();
         res.send("200");
